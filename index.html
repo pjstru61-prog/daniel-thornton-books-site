@@ -623,8 +623,11 @@ body.modal-open { overflow: hidden; }
     <a class="pill" href="mailto:danielthorntonbooks@pm.me?subject=Manifested%20Contact&body=Hello%20Daniel%2C">Contact Me</a>
     <button class="pill" type="button" onclick="scrollToSection('resources')">Free Downloads</button>
     <button class="pill" type="button" onclick="scrollToSection('coming-soon')">Coming Soon</button>
-
-
+    <div class="cta-row" style="margin-top:10px;">
+    <button class="pill" type="button" onclick="openModal('disclaimer-modal')">Disclaimer</button>
+    <button class="pill" type="button" onclick="openModal('terms-modal')">Terms of Use</button>
+    <button class="pill" type="button" onclick="openModal('privacy-modal')">Privacy Policy</button>
+    </div>
   </nav>
 </header>
 
@@ -678,7 +681,7 @@ body.modal-open { overflow: hidden; }
     Free Downloads
   </h2>
   <h3 style="margin-top:0;color:var(--text);text-align:center;">
-   Curated tools, references, and field notes for watchmen &mdash;
+   Curated tools, references, and field notes for Watchmen &mdash;
   </h3>
   <div class="resources-split">
 
@@ -873,6 +876,103 @@ body.modal-open { overflow: hidden; }
   </div>
 </div>
 
+<!-- Disclaimer Modal -->
+<div id="disclaimer-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="disclaimer-modal-title" aria-hidden="true">
+  <div class="modal-backdrop" onclick="closeModal('disclaimer-modal')"></div>
+  <div class="modal-content">
+    <button class="modal-close" type="button" aria-label="Close Disclaimer"
+            onclick="closeModal('disclaimer-modal')">&times;</button>
+    <h2 id="disclaimer-modal-title">Disclaimer</h2>
+
+    <p>
+  The content published on this website reflects the theological, philosophical,
+  and analytical perspectives of the author and contributors of Daniel Thornton
+  Books LLC.
+   </p>
+
+   <p>
+  All views expressed are offered for the purposes of discussion, study, and
+  personal discernment, and do not represent official doctrine, institutional
+  positions, or endorsements of any church, organization, or governing body.
+   </p>
+
+   <p>
+  Interpretations of Scripture, prophecy, history, technology, and culture are
+  presented as informed analysis rather than definitive or exhaustive conclusions.
+   </p>
+
+   <p>
+  Readers are encouraged to examine the material carefully, test all claims,
+  and arrive at their own conclusions.
+   </p>
+
+  </div>
+</div>
+
+<!-- Terms Modal -->
+<div id="terms-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" aria-hidden="true">
+  <div class="modal-backdrop" onclick="closeModal('terms-modal')"></div>
+  <div class="modal-content">
+    <button class="modal-close" type="button" aria-label="Close Terms"
+            onclick="closeModal('terms-modal')">&times;</button>
+    <h2 id="terms-modal-title">Terms of Use</h2>
+
+   <p>
+  By accessing and using this website, you agree to do so at your own discretion
+  and responsibility.
+   </p>
+
+   <p>
+  All content is provided for informational and educational purposes only.
+  Daniel Thornton Books LLC makes no guarantees regarding the accuracy,
+  completeness, or applicability of the material presented.
+   </p>
+
+   <p>
+  In no event shall Daniel Thornton Books LLC, its owners, or affiliates be liable
+  for any direct, indirect, incidental, consequential, or perceived damages
+  arising from the use of this website, its content, or any linked materials.
+   </p>
+
+   <p>
+  Nothing on this site constitutes legal, medical, financial, pastoral, or
+  professional advice, and use of this site does not establish any advisory,
+  counseling, or fiduciary relationship.
+   </p>
+  </div>
+</div>
+
+<!-- Privacy Modal -->
+<div id="privacy-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" aria-hidden="true">
+  <div class="modal-backdrop" onclick="closeModal('privacy-modal')"></div>
+  <div class="modal-content">
+    <button class="modal-close" type="button" aria-label="Close Privacy Policy"
+            onclick="closeModal('privacy-modal')">&times;</button>
+   <h2 id="privacy-modal-title">Privacy Policy</h2>
+
+   <p>
+  Daniel Thornton Books LLC respects your privacy and is committed to protecting
+  personal information shared by visitors.
+   </p>
+
+   <p>
+  This website does not knowingly collect personal data beyond what is voluntarily
+  provided through direct contact methods, such as email inquiries.
+   </p>
+
+   <p>
+  Personal information is never sold, rented, or shared with third parties for
+  marketing purposes.
+   </p>
+
+   <p>
+  External platforms linked from this site (including book retailers and social
+  media services) operate under their own privacy policies, which are not governed
+  by Daniel Thornton Books LLC.
+   </p>
+  </div>
+</div>
+
 <footer>
   <p>&copy; 2025-2026 Daniel Thornton Books. All rights reserved.</p>
   <p>
@@ -886,6 +986,14 @@ body.modal-open { overflow: hidden; }
     &nbsp;&middot;&nbsp;
     <a href="https://www.barnesandnoble.com/w/manifested-daniel-thornton/1148665066?ean=2940182631495" target="_blank" rel="noopener noreferrer">Barnes &amp; Noble (EPUB)</a>
   </p>
+  <p class="footer-legal">
+  <a href="#" onclick="openModal('disclaimer-modal'); return false;">Disclaimer</a>
+  &nbsp;|&nbsp;
+  <a href="#" onclick="openModal('terms-modal'); return false;">Terms</a>
+  &nbsp;|&nbsp;
+  <a href="#" onclick="openModal('privacy-modal'); return false;">Privacy</a>
+  </p>
+
 </footer>
 
 <script>
@@ -897,7 +1005,6 @@ body.modal-open { overflow: hidden; }
   }
 
   function openAuthorModal(){
-    // Force the page to the top before showing the modal (GoDaddy-safe)
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     var modal = document.getElementById('author-modal');
@@ -920,12 +1027,43 @@ body.modal-open { overflow: hidden; }
     }
   }
 
+  /* =========================
+     STEP 2 — Generic Modals
+     ========================= */
+
+  function openModal(id){
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+    var modal = document.getElementById(id);
+    if(modal){
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
+
+      var closeBtn = modal.querySelector('.modal-close');
+      if(closeBtn){ closeBtn.focus(); }
+    }
+  }
+
+  function closeModal(id){
+    var modal = document.getElementById(id);
+    if(modal){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+      document.body.classList.remove('modal-open');
+    }
+  }
+
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
       closeAuthorModal();
+      closeModal('disclaimer-modal');
+      closeModal('terms-modal');
+      closeModal('privacy-modal');
     }
   });
 </script>
+
 
 </body>
 </html>
