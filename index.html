@@ -392,33 +392,42 @@
 
   .resource-item{
     display:grid;
-    grid-template-columns:140px 1fr;
+    grid-template-columns:150px minmax(0,1fr);
     gap:14px;
+    align-items:center;
   }
 
   .resource-item .pill{
-  width:100%;
-  height:38px;          /* ← lock height */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  line-height:1;
-  box-sizing:border-box;
-}
-
-
- @media(max-width:560px){
-  .resource-item{ grid-template-columns:1fr; }
-  .resource-item .pill{
-    width:140px;
+    width:150px;
+    min-width:150px;
+    max-width:150px;
     height:38px;
     display:flex;
     align-items:center;
     justify-content:center;
     line-height:1;
     box-sizing:border-box;
+    padding:10px 12px;
   }
-}
+
+  .resource-item p{
+    margin:0;
+  }
+
+  @media(max-width:560px){
+    .resource-item{ grid-template-columns:1fr; }
+    .resource-item .pill{
+      width:150px;
+      min-width:150px;
+      max-width:150px;
+      height:38px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      line-height:1;
+      box-sizing:border-box;
+    }
+  }
 
 
   /* =========================
@@ -747,6 +756,11 @@ body.modal-open { overflow: hidden; }
            </a>
            <p>Dumb Terminals to <strong>Digital Prophet</strong> (PDF)</p>
         </div>
+        
+        <div class="resource-item">
+           <button class="pill" type="button" onclick="openModal('revelation-modal')">Enter</button>
+           <p>OT Imagery in <strong>Revelation</strong> - a Full Study</p>
+        </div>
 
       </div>
     </div>
@@ -790,126 +804,7 @@ body.modal-open { overflow: hidden; }
   </div>
   <br>
   <br>
-  <!-- Centered: Study in the Book of Revelation -->
-   <div aria-label="Revelation Study">
-    <h2 style="margin-top:0;color:var(--gold-bright);text-align:center;">A Study in the Book of Revelation</h2>
-
-         <h3 style="margin-top:0;color:var(--muted);text-align:center;">The following provide a <strong>Guided Study</strong>
-        of Old Testament symbolism used by John in the Book of Revelation</h3>
-       <div class="resources-split">
-
-    <!-- LEFT: Downloads -->
-      <div class="resources-left">
-      
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Morning_Star.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. Intro
-           </a>
-           <p><strong>Morning Star</strong> & Rebel of the Dawn (PDF)</p>
-        </div>
-        
-         <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_TheScroll_TheLamb_Authority.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 5
-           </a>
-           <p><strong>The Scroll, The Lamb, </strong>& Authority (PDF)</p>
-        </div>
-   
-         <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Seals_Sovereignty_Servants.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 6 & 7
-           </a>
-           <p><strong>Seals, Sovereignty, </strong>& Servants (PDF)</p>
-        </div>       
-        
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Witnesses_and_War_for_Authority.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 10 & 11
-           </a>
-           <p><strong>Witnesses</strong> and War for Authority (PDF)</p>
-        </div> 
-        
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Kingdoms_and_Harlots_on_Dragons.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 14 & 15
-           </a>
-           <p><strong>Kingdoms</strong> and Harlots on Dragons (PDF)</p>
-        </div>
-        
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Babylon_Falls_Victory_of_the_Lamb.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 18 & 19
-           </a>
-           <p>Babylon Falls <strong>Victory of the Lamb (PDF)</strong></p>
-        </div>
-        
-       </div>
-        
-        <!-- RIGHT: Downloads -->
-    <aside class="resources-right" aria-label="Revelation Study Right">
-        
-        <div class="resources-list">
-        
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Thrones_Crowns_and_Conquerors.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 1 - 4
-           </a>
-           <p><strong>Thrones, Crowns, </strong>& Conquerors (PDF)</p>
-        </div>
-        
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Study-Aid_Wings-with-Eyes_Lamb-with-Horns.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           SA Rev. 4 & 5
-           </a>
-           <p><strong>Rev. 4 & 5 </strong>Imagery Study Aid (PDF)</p>
-        </div>
-       
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Trumpets_and_Abyss.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 8 & 9
-           </a>
-           <p><strong>Trumpets </strong>& The<strong> Abyss</strong> (PDF)</p>
-        </div>
-
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_The_Dragon_Beasts_Allegiance.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 12 & 13
-           </a>
-           <p><strong>The Dragon, </strong>Beasts & Allegiance (PDF)</p>
-        </div>
-        
-        <div class="resource-item">
-           <a class="pill"
-           href="/downloads/DTB_Research_Babylon_and_Bowls_of_Wrath.pdf"
-           rel="noopener noreferrer" target="_blank">           
-           Rev. 16 & 17
-           </a>
-           <p><strong>Babylon </strong>& Bowls of Wrath (PDF)</p>
-        </div>
-              
-   </aside>     
-  </div>
-
+  
   <!-- Centered: Contact / Goodreads (moved from right column) -->
   <div class="resources-contact" aria-label="Contact the Author and Goodreads">
     <h3>Contact the Author</h3>
@@ -1068,6 +963,152 @@ body.modal-open { overflow: hidden; }
   </div>
 </div>
 
+<!-- Revelation Modal -->
+<div id="revelation-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="revelation-modal-title" aria-hidden="true">
+  <div class="modal-backdrop" onclick="closeModal('revelation-modal')"></div>
+
+  <div class="modal-content">
+    <button class="modal-close" type="button" aria-label="Close Revelation Study"
+            onclick="closeModal('revelation-modal')">&times;</button>
+
+    <!-- Centered: Study in the Book of Revelation -->
+    <div aria-label="Revelation Study">
+      <h2 id="revelation-modal-title" style="margin-top:0;color:var(--gold-bright);text-align:center;">A Study in the Book of Revelation</h2>
+
+      <h3 style="margin-top:0;color:var(--muted);text-align:center;">The following provide a <strong>Guided Study</strong>
+      of Old Testament symbolism used by John in the Book of Revelation</h3>
+
+      <div class="resources-split">
+
+        <!-- LEFT: Downloads -->
+        <div class="resources-left">
+          <div class="resources-list">
+
+
+          <div class="resource-item">
+            <a class="pill"
+               href="/downloads/DTB_Research_Morning_Star.pdf"
+               rel="noopener noreferrer" target="_blank">
+              Rev. Intro
+            </a>
+            <p><strong>Morning Star</strong> & Rebel of the Dawn (PDF)</p>
+          </div>
+
+          <div class="resource-item">
+            <a class="pill"
+               href="/downloads/DTB_Research_TheScroll_TheLamb_Authority.pdf"
+               rel="noopener noreferrer" target="_blank">
+              Rev. 5
+            </a>
+            <p><strong>The Scroll, The Lamb, </strong>& Authority (PDF)</p>
+          </div>
+
+          <div class="resource-item">
+            <a class="pill"
+               href="/downloads/DTB_Research_Seals_Sovereignty_Servants.pdf"
+               rel="noopener noreferrer" target="_blank">
+              Rev. 6 & 7
+            </a>
+            <p><strong>Seals, Sovereignty, </strong>& Servants (PDF)</p>
+          </div>
+
+          <div class="resource-item">
+            <a class="pill"
+               href="/downloads/DTB_Research_Witnesses_and_War_for_Authority.pdf"
+               rel="noopener noreferrer" target="_blank">
+              Rev. 10 & 11
+            </a>
+            <p><strong>Witnesses</strong> and War for Authority (PDF)</p>
+          </div>
+
+          <div class="resource-item">
+            <a class="pill"
+               href="/downloads/DTB_Research_Kingdoms_and_Harlots_on_Dragons.pdf"
+               rel="noopener noreferrer" target="_blank">
+              Rev. 14 & 15
+            </a>
+            <p><strong>Kingdoms</strong> and Harlots on Dragons (PDF)</p>
+          </div>
+
+          <div class="resource-item">
+            <a class="pill"
+               href="/downloads/DTB_Research_Babylon_Falls_Victory_of_the_Lamb.pdf"
+               rel="noopener noreferrer" target="_blank">
+              Rev. 18 & 19
+            </a>
+            <p>Babylon Falls <strong>Victory of the Lamb (PDF)</strong></p>
+          </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Downloads -->
+        <aside class="resources-right" aria-label="Revelation Study Right">
+
+          <div class="resources-list">
+
+            <div class="resource-item">
+              <a class="pill"
+                 href="/downloads/DTB_Research_Thrones_Crowns_and_Conquerors.pdf"
+                 rel="noopener noreferrer" target="_blank">
+                Rev. 1 - 4
+              </a>
+              <p><strong>Thrones, Crowns, </strong>& Conquerors (PDF)</p>
+            </div>
+
+            <div class="resource-item">
+              <a class="pill"
+                 href="/downloads/DTB_Study-Aid_Wings-with-Eyes_Lamb-with-Horns.pdf"
+                 rel="noopener noreferrer" target="_blank">
+                SA Rev. 4 & 5
+              </a>
+              <p><strong>Rev. 4 & 5 </strong>Imagery Study Aid (PDF)</p>
+            </div>
+
+            <div class="resource-item">
+              <a class="pill"
+                 href="/downloads/DTB_Research_Trumpets_and_Abyss.pdf"
+                 rel="noopener noreferrer" target="_blank">
+                Rev. 8 & 9
+              </a>
+              <p><strong>Trumpets </strong>& The<strong> Abyss</strong> (PDF)</p>
+            </div>
+
+            <div class="resource-item">
+              <a class="pill"
+                 href="/downloads/DTB_Research_The_Dragon_Beasts_Allegiance.pdf"
+                 rel="noopener noreferrer" target="_blank">
+                Rev. 12 & 13
+              </a>
+              <p><strong>The Dragon, </strong>Beasts & Allegiance (PDF)</p>
+            </div>
+
+            <div class="resource-item">
+              <a class="pill"
+                 href="/downloads/DTB_Research_Babylon_and_Bowls_of_Wrath.pdf"
+                 rel="noopener noreferrer" target="_blank">
+                Rev. 16 & 17
+              </a>
+              <p><strong>Babylon </strong>& Bowls of Wrath (PDF)</p>
+            </div>
+            
+            <div class="resource-item">
+              <a class="pill"
+                 href="/downloads/DTB_Research_Final_Judgement_Divine_Rule.pdf"
+                 rel="noopener noreferrer" target="_blank">
+                Rev. 20, 21, 22
+              </a>
+              <p>Final Judgement, <strong>Divine Rule</strong> (PDF)</p>
+            </div>
+
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
   <p>&copy; 2026 Daniel Thornton Books. All rights reserved.</p>
   <p>
@@ -1155,6 +1196,7 @@ body.modal-open { overflow: hidden; }
       closeModal('disclaimer-modal');
       closeModal('terms-modal');
       closeModal('privacy-modal');
+      closeModal('revelation-modal');
     }
   });
 </script>
