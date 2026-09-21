@@ -542,6 +542,34 @@
     margin:0;
   }
 
+/* Old Gods, New Thrones — PDF + Audio resource */
+.resource-buttons{
+  width:150px;
+  display:flex;
+  gap:6px;
+}
+
+.resource-buttons .pill{
+  width:72px;
+  min-width:72px;
+  max-width:72px;
+  height:38px;
+  padding:10px 6px;
+}
+
+.resource-download-label{
+  width:150px;
+  margin:0 0 4px;
+  text-align:center;
+  color:var(--gold-bright);
+  font-weight:700;
+  font-size:.9rem;
+}
+
+.resource-item-dual{
+  align-items:start;
+}
+
   @media(max-width:560px){
     .resource-item{ grid-template-columns:1fr; }
     .resource-item .pill{
@@ -554,6 +582,12 @@
       justify-content:center;
       line-height:1;
       box-sizing:border-box;
+    }
+
+    .resource-buttons .pill{
+      width:72px;
+      min-width:72px;
+      max-width:72px;
     }
   }
 
@@ -942,8 +976,36 @@ body.modal-open { overflow: hidden; }
     <aside class="resources-right" aria-label="The Watchman's Armoury">
       <h3>The Watchman&#39;s Armoury</h3>
 
-      <div class="resources-list">
+      <div class="resource-item resource-item-dual">
 
+      <div class="resource-downloads">
+      <div class="resource-download-label">Downloads</div>
+
+      <div class="resource-buttons">
+           <a class="pill"
+           href="/downloads/DTB_Research_Old_Gods_New_Thrones.pdf"
+           rel="noopener noreferrer"
+           target="_blank">
+           PDF
+           </a>
+
+          <a class="pill"
+          href="/downloads/Old_Gods_New_Thrones.mp3"
+          download>
+          Audio
+          </a>
+      </div>
+      </div>
+
+  <p>
+    <strong>Old Gods, New Thrones</strong><br>
+    Why the Divine Council Worldview Matters in the Age of AI
+    (PDF + Audio)
+  </p>
+
+</div>
+
+        
       <div class="resource-item">
            <a class="pill"
            href="/downloads/DTB_Research_Ancient_Temptation_Behind_AI.pdf"
@@ -952,7 +1014,7 @@ body.modal-open { overflow: hidden; }
            </a>
            <p><strong>Ancient Temptation</strong> Behind AI <br>Pope Leo XIV, Babel, Spiritual AI Risk (PDF)</p>
         </div>
-      
+        
         <div class="resource-item">
            <a class="pill"
            href="/downloads/DTB_Research_Reformed_Perspective.pdf"
