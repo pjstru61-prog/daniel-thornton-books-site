@@ -436,22 +436,6 @@
     align-items:stretch;
   }
 
-  @media(max-width:900px){
-    .grid{ grid-template-columns:1fr; }
-    .site-logo{ max-width:200px; }
-  
-  .resources-split{
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-  .resources-right{
-    border-left: none;
-    padding-left: 0;
-    border-top: 1px solid rgba(255,255,255,.14);
-    padding-top: 18px;
-  }
-}
-
   .card{
     height:100%;
     background:
@@ -567,30 +551,8 @@
 }
 
 .resource-item-dual{
-  align-items:start;
+  align-items:center;
 }
-
-  @media(max-width:560px){
-    .resource-item{ grid-template-columns:1fr; }
-    .resource-item .pill{
-      width:150px;
-      min-width:150px;
-      max-width:150px;
-      height:38px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      line-height:1;
-      box-sizing:border-box;
-    }
-
-    .resource-buttons .pill{
-      width:72px;
-      min-width:72px;
-      max-width:72px;
-    }
-  }
-
 
   /* =========================
      Resources split layout
@@ -622,6 +584,66 @@
   .resources-right .cta{
     justify-content:flex-start;
     margin-top:14px;
+  }
+
+  /* =========================================
+     Responsive resource layout
+     ========================================= */
+  @media (max-width:900px){
+    .grid{
+      grid-template-columns:1fr;
+    }
+
+    .site-logo{
+      max-width:200px;
+    }
+
+    .resources-split{
+      grid-template-columns:1fr;
+      gap:22px;
+    }
+
+    .resources-right{
+      border-left:none;
+      padding-left:0;
+      border-top:1px solid rgba(255,255,255,.14);
+      padding-top:18px;
+    }
+  }
+
+  @media (max-width:560px){
+    .resource-item{
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+
+    .resource-item .pill{
+      width:150px;
+      min-width:150px;
+      max-width:150px;
+    }
+
+    .resource-buttons{
+      width:150px;
+      display:flex;
+      flex-direction:row;
+      gap:6px;
+    }
+
+    .resource-buttons .pill{
+      width:72px;
+      min-width:72px;
+      max-width:72px;
+    }
+
+    .resource-downloads{
+      width:150px;
+    }
+
+    .resource-download-label{
+      width:150px;
+      text-align:center;
+    }
   }
 /* =========================
      Resources headings + contact section
@@ -976,6 +998,7 @@ body.modal-open { overflow: hidden; }
     <aside class="resources-right" aria-label="The Watchman's Armoury">
       <h3>The Watchman&#39;s Armoury</h3>
 
+      <div class="resources-list">
       <div class="resource-item resource-item-dual">
 
       <div class="resource-downloads">
@@ -990,7 +1013,7 @@ body.modal-open { overflow: hidden; }
            </a>
 
           <a class="pill"
-          href="https://pub-fdde587a8477415195f2ae084f4beff2.r2.dev/Old_Gods_New_Thrones.mp3"
+          href="/downloads/Old_Gods_New_Thrones.mp3"
           download>
           Audio
           </a>
